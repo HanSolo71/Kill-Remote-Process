@@ -6,7 +6,7 @@ $Application = "Notepad"
 
 #For Each Loop to Kill Process On Each Computer
 
-foreach ($Machine in $Machines) {
-
+foreach ($Machine in $Machines)
+{
 (Get-WmiObject Win32_Process -ComputerName $Machine | ?{ $_.ProcessName -match "$Application" }).Terminate()
 }
